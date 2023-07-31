@@ -49,7 +49,7 @@ employeeInfo_t getEmployeeDetails()
 	scanf(" %c",&M_F);
 	
 	printf("Enter addess of employee: ");
-	scanf(" %[^\n]",emp.addess);
+	scanf(" %[^\n]",emp.address);
 	
 	printf("enter salary details: \n");
 	emp.salary = getSalary();
@@ -61,7 +61,7 @@ employeeInfo_t getEmployeeDetails()
 	scanf("%f",&emp.client_billing_per_month);
 	
 	printf("enter type of Employee{Permanent(1) Contractual(2) ShortTerm(3)}: ");
-	scanf("%d",&empInfo.employeeType);
+	scanf("%d",&empInfo.typeEmp);
 	
 	if(M_F == 'M' || M_F == 'm')
 		emp.gender = MALE;
@@ -70,15 +70,14 @@ employeeInfo_t getEmployeeDetails()
 	else
 		emp.gender = ORTHER;
 	
-	if(empInfo.employeeType == ShortTerm)
+	if(empInfo.typeEmp == ShortTerm)
 	{
-		end_date_of_assignment
 		printf("Enter end date of assignment of employee(YYYY-MM-DD): ");
 		scanf(" %[^\n]",empInfo.employeeType.shortTermEmployee.end_date_of_assignment);
 		
 		empInfo.employeeType.shortTermEmployee.employee = emp;
 	}
-	else if(empInfo.employeeType == Contractual)
+	else if(empInfo.typeEmp == Contractual)
 	{
 		empInfo.employeeType.contractualEmployee.employee = emp;
 	}

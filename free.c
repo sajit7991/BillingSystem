@@ -1,4 +1,4 @@
-#include<free.h>
+#include "free.h"
 
 void freeAllObject(EmployeeSystem_t** mirafraEmployee)
 {
@@ -10,7 +10,7 @@ void freeAllObject(EmployeeSystem_t** mirafraEmployee)
 		(*mirafraEmployee) = (*mirafraEmployee)->next;
 		free(temp);
 	}
-	*onode = NULL;
+	onode = NULL;
 }
 
 

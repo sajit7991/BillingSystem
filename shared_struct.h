@@ -9,7 +9,7 @@
 #endif
 
 
-typedef enum employeeType
+typedef enum employeeTypeEnum
 {
 	Permanent = 1,
 	Contractual,
@@ -62,12 +62,12 @@ typedef struct ShortTermEmployee
 
 typedef struct {
 	
-	typedef union {
+	union employeeType {
 		permanentEmployee_t		permanentEmployee;
 		contractualEmployee_t 	contractualEmployee;
 		shortTermEmployee_t		shortTermEmployee;
-	}employeeType
-	int employeeType;
+	}employeeType ;
+	int typeEmp;
 
 }employeeInfo_t;
 
@@ -92,7 +92,7 @@ Var mirafraEmployeeSystem_t mirafraEmployeeVar
 ;
 
 
-Employee_t* returnEmployeeType(employeeInfo_t* employeeInfoPtr ,int employeeType);
+Employee_t* returnEmployeeType(employeeInfo_t* employeeInfoPtr );
 
 
 

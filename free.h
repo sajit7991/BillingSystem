@@ -1,3 +1,3 @@
 #include "shared_struct.h"
 
-void freeAllObject(EmployeeSystem_t* mirafraEmployee);
+void freeAllObject(EmployeeSystem_t** mirafraEmployee);

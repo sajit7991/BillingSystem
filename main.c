@@ -5,6 +5,10 @@
 #include <stdlib.h>	
 #include "shared_struct.h"
 
+#include "addEmployee.h"
+#include "free.h"
+#include "Billing.h"
+
 typedef enum options
 {
 	AddEmployee = 1,
@@ -19,9 +23,10 @@ typedef enum options
 
 
 
-Employee_t* returnEmployeeType(employeeInfo_t* employeeInfoPtr ,int employeeType)
+Employee_t* returnEmployeeType(employeeInfo_t* employeeInfoPtr )
 {
 	Employee_t* emp = NULL;
+	int employeeType = employeeInfoPtr->typeEmp;
 	switch(employeeType)
 	{
 		case Permanent: 
@@ -63,20 +68,25 @@ int main(int argc ,char** argv)
 			continue;
 		}
 		
-		switch(opt)
+		switch(opt) 
 		{
 			case AddEmployee:
 					addEmployee(&mirafraEmployeeVar);
 					break;
 			case ClientBilling:
+					ClientBillingFun(mirafraEmployeeVar);
 					break;
 			case employeeSalary:
+					employeeSalaryFun(mirafraEmployeeVar);
 					break;
 			case Consolidated:
+					consolidateReportFun(mirafraEmployeeVar);
 					break;
 			case Individual:
+					employeeBillingFun(mirafraEmployeeVar);
 					break;
 			case SalaryAlert:
+					salaryAlertFun(mirafraEmployeeVar);
 					break;
 			case Exit:
 					printf("Bye, Have a nice day!!!");
